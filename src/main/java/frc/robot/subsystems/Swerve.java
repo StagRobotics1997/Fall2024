@@ -101,7 +101,11 @@ public class Swerve extends SubsystemBase {
         this
       );
     }
-
+    
+    public void setVision(frc.robot.Vision visionIn){
+        vision= visionIn;
+    }
+    
     public static Swerve getInstance() {
         if (instance == null) {
             instance = new Swerve();

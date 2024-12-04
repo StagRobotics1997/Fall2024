@@ -44,7 +44,7 @@ public class RobotContainer {
     private final ShooterSubsystem mShooterSubsystem = new ShooterSubsystem();
     private final LiftSubsystem mLiftSubsystem = new LiftSubsystem();
     private final FlapSubsystem mFlapSubsystem = new FlapSubsystem();
-    private PhotonCamera mCamera = new PhotonCamera("10");
+    private PhotonCamera mCamera = new PhotonCamera("1");
     private Vision vision = new Vision();
     // private LEDsubsystem m_LEDsubsystem;
 
@@ -81,7 +81,8 @@ public class RobotContainer {
         // CommandScheduler.getInstance().setDefaultCommand(m_LEDsubsystem, new SetLEDsForNote(mIntakeSubsystem, m_LEDsubsystem));
         NamedCommands.registerCommand("IntakeGround", new IntakeGround(mIntakeSubsystem));
         NamedCommands.registerCommand("ShootSpeaker", new ShootSpeaker(mShooterSubsystem, mIntakeSubsystem));
-
+        
+        mSwerve.setVision(vision);
         mSwerve.setDefaultCommand(
                 new TeleopSwerve(
                         mSwerve,
